@@ -1,6 +1,6 @@
 ---
-sectionid: virtualization
+sectionid: memory
 sectionclass: h3
 title: Memory Oversubscription
-parent-id: virtualization
+parent-id: oversubscription
 ---
