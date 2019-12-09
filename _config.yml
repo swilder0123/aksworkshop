@@ -1,6 +1,6 @@
 full_rebuild: true
-name: "The Azure Kubernetes Workshop"
-tracking: "aksworkshop"
+name: "Windows Server 2008/R2 Notebook"
+tracking: "win2k8notebook"
 author: Microsoft
 encoding: utf-8
 defaults:
