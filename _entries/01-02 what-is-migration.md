@@ -1,7 +1,7 @@
 ---
 sectionid: migration
 sectionclass: h2
-title: Windows Server Migration to Azure
+title: Migration Resources
 parent-id: migration
 ---
 
