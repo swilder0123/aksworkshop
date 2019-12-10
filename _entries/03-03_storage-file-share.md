@@ -48,7 +48,7 @@ Connect to a file share
 
 See all connected (mapped) drives using the NET USE command. Note that it is possible to do loopback and connect to a local shared resource via SMB:
 
-<imagegoeshere>
+> An image will go here
 
 Use `NET USE [drive_letter] /D` to disconnect a specific connection, or `NET USE * /D` to disconnect everything.
 
@@ -78,7 +78,7 @@ Some system items are shared automatically, e.g., disk volumes. To connect to a 
 
 See all shared local drives using the NET SHARE command:
 
-<imagegoeshere>
+> An image will go here
 
 ### SMB Authentication
 

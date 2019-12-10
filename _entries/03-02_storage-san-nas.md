@@ -1,7 +1,7 @@
 ---
 sectionid: san
 sectionclass: h2
-title: Storage Infrastructure: SAN and NAS
+title: Storage Infrastructure - SAN and NAS
 parent-id: storage
 ---
 
@@ -99,19 +99,19 @@ More options for disk management are provided by Storage Spaces.
 
 By usual custom in Windows, a volume is presented by the operating system as a drive letter, i.e., a C: drive. In this case you can consider C: to be a mount point for the OS partition. Not all volumes are mapped to drive letters, however...it is common to see multiple hidden volumes on a system. The easiest tool to use to see all your volumes is DiskPart:
 
-<imagegoeshere>
+> an image will go here
 
 In the case above, notice that Volume 6 is attached to a directory mount point. These are supported in Windows but are infrequently used. In theory, you could mount the user profiles directory to a specific volume (i.e., like mapping /home to a different disk volume in a Unix-style OS), but there is typically little advantage in doing so.
 
 Each volume in Windows has a volume identifier which is unique across space and time. This allows disk volumes to be mounted on a new system without losing their integral identity. A globally unique ID (GUID) is used to identify a volume created in Windows. A volume list (produced by mountvol) looks like this:
 
-<imagegoeshere>
+> an image will go here
 
 The OS kernel has no underlying dependency on drive letters, although one drive letter must be assigned to the system. Any other volume can be mounted on an existing file system or even have no stated mount point (typical for OS utility volumes).
 
 The mount point for any existing volume (except the system drive) can be changed, although any scripts or configurations which depend on existing location may be broken as a result.
 
-<imagegoeshere>
+> an image will go here
 
 For scripting purposes, it is always recommended to use system-generated variables to find objects of interest, e.g.:
 

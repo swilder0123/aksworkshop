@@ -1,7 +1,7 @@
 ---
 sectionid: storagespaces
 sectionclass: h2
-title: Storage Infrastructure: Storage Spaces and Storage Spaces Direct (S2D)
+title: Storage Infrastructure - Storage Spaces and Storage Spaces Direct (S2D)
 parent-id: storage
 ---
 
