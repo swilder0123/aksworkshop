@@ -1,8 +1,6 @@
 ---
 sectionid: storage
 sectionclass: h1
-title: Storage Information
+title: Enterprise Storage
 is-parent: yes
 ---
-
-
