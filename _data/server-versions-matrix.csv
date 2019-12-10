@@ -1,0 +1,18 @@
+Year,Product Cycle,Client,Standard Server,Enterprise Server,Datacenter Server,Comment,Ext. Support ended
+1993,Windows NT 3.1,Windows  NT 3.1 Workstation,Windows NT 3.1 Advanced Server,,,"Supported Intel x86 (IA32), MIPS, DEC Alpha",12/31/2000
+1994,Windows NT 3.5,Windows NT 3.5 Workstation,Windows NT 3.5 Server,,,"Focus on speed, memory utilization, bug fixes, new network services (e.g., DHCP). Introduced client access licensing (CALs).",12/31/2001
+1995,Windows NT 3.51,Windows NT 3.51 Workstation,Windows NT 3.51 Server,,,Added support for PowerPC,12/31/2001
+1996,Windows NT 4.0,Windows NT 4.0 Workstation,Windows NT 4.0 Server,Windows NT 4.0 Enterprise Edition (1997),,Enterprise Edition supported additional processors (8 instead of 4) and (theoretically) up to 64GB of memory.,6/30/2004
+1998,Windows NT 4.0,,Windows NT 4.0 Terminal Server Edition (1998),,,Windows Server Failover Clusters were introduced.,6/30/2004
+2000,Windows 2000,Windows 2000 Professional,Windows 2000 Server,Windows 2000 Advanced Server,"Windows 2000 Datacenter Server (late availability, OEM only)","Active Directory introduced. Initial support for Intel Itanium (IA64). Support for MIPS, DEC Alpha and PowerPC dropped.",7/13/2010
+2001,Windows XP,Windows XP,,,,Windows XP was created in the development 'wave' which resulted in Windows Server 2003.,4/8/2014
+2003,Windows 2003,Windows XP SP1,Windows Server 2003 Server,Windows Server 2003 Enterprise Edition,Windows Server 2003 Datacenter Edition,"Support for x86, x64 and IA64 architectures. The initial Windows 2003 release was SP1 because of coordination with the XP kernel.",7/13/2010
+2005,,,Windows Server 2003 R2,Windows Server 2003 R2 Enterprise Edition,Windows Server 2003 R2 Datacenter Edition,"Windows Server 2003 R2 did not include new OS-level features. First version with datacenter virtualization licensing. R2 shared all updates, service packs and patches with W2k3. IA64 deprecated. MS Virtual Server introduced.",7/13/2010
+2007,Windows Vista,Windows Vista,,,,"As with Windows XP, Vista was part of a development wave in which the client OS was released first.",4/11/2017
+2008,Windows Server 2008,,Windows Server 2008,Windows Server 2008 Enterprise Edition,Windows Server 2008 Datacenter Edition,Based on the same OS kernel as Windows Vista. Final version of Windows Server available as 32-bit (x86). First support for Server Core.,1/14/2020
+2010,Windows Server 2008 R2,Windows 7,Windows Server 2008 R2,Windows Server 2008 R2 Enterprise Edition,Windows Server 2008 R2 Datacenter Edition,First version to ship with in-box support for Hyper-V,1/14/2020
+2012,Windows Server 2012,Windows 8,Windows Server 2012,none,Windows Server 2012 Datacenter,Enterprise Edition discontinued; its features were folded into the Standard Edition. Feature set parity across Std <--> Datacenter.,10/10/2023
+2014,Windows Server 2012 R2,Windows 8.1,Windows Server 2012 R2,,Windows Server 2012 R2 Datacenter,,10/10/2023
+2016,Windows Server 2016,Windows 10,Windows Server 2016,,Windows Server 2016 Datacenter,Introduction of Windows 'Nano' for container support. New per-core licensing. Introduction of semi-annual channel releases.,1/12/2027
+2019,Windows Server 2019,,Windows Server 2019,,Windows Server 2019 Datacenter,Current version,1/9/2029
+Ongoing,Windows Server,see Release History,Windows Server,,Windows Server Datacenter,"New releases appear approximately every six months; version == year+approximate month of release, e.g, version 1803 was released around March 2018.",18 months following release
