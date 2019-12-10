@@ -11,10 +11,12 @@ This notebook was created to assist as a reference to Windows Server in migratio
 
 ### Azure Cloud Framework
 Architectural and Planning information is available from these resources - these are referenced throughout this notebook:  
+
 * The [Azure Cloud Adoption Framework][1]: Provides a foundation for planning a migration target environment.
 
 ### Migration Playbooks
 Migration Playbooks provide practical advice and sales guidance for finding and executing on migration (Thing 1) opportunities.  
+
 * The [Windows Server 2008/R2][2] playbook (PPT)
 * The [SQL Server 2008][3] playbook
 
