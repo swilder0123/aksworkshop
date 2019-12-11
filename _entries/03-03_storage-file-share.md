@@ -17,7 +17,6 @@ Volumes may be mounted at the share level (i.e., `file://host/sharevol`) or "dee
 
 Permissions are checked on the underlying resources and if an SMB session between the client and the server doesn't exist, the client will be authenticated.
 
-
 ### SMB Sessions
 
 Use of Server Message Block (SMB) (sometimes known as Common Internet File Sharing, or CIFS) is ubiquitous in Windows. SYSVOL replication, DNS zone replication and many other infrastructure roles use SMB under the covers to exchange data.
@@ -26,11 +25,12 @@ Use of Server Message Block (SMB) (sometimes known as Common Internet File Shari
 
 SMB dates back to the 1980's, but was rearchitected (since Windows 2000) to operate on TCP/IP (Direct-host SMB) over port 445/tcp/udp. No other ports are required for SMB itself, although some Windows processes may require other common ports, like Kerberos, LDAP, SSL/TLS, and the RPC endpoint mapper (135/tcp).
 
-> NetBIOS 
-> Don't confuse NetBIOS with SMB, RPC, or any other legacy networking interface.
-> NetBIOS is a legacy (largely extinct) interface for network applications. It was largely removed as a OS dependency in Windows Server 2000, although applications continued to depend on it throughout the early 2000's. WINS was a distributed network service to allow NetBIOS name announcements to be broadcast across TCP subnets.
-> NetBIOS over TCP/IP (NBT) ports should never be opened to enable file service traffic, and NBT should be disabled on all systems by default.
-> WINS should be disabled and never used in any cloud networking context.
+> #### About NetBIOS 
+> Don't confuse NetBIOS with SMB, RPC, or any other legacy networking interface.  
+
+> NetBIOS is a legacy (largely extinct) interface for network applications. It was largely removed as a OS dependency in Windows Server 2000, although applications continued to depend on it throughout the early 2000's. WINS was a distributed network service to allow NetBIOS name announcements to be broadcast across TCP subnets.  
+
+> NetBIOS over TCP/IP (NBT) ports should never be opened to enable file service traffic, and NBT should be disabled on all systems by default. WINS should be disabled and never used in any cloud networking context.
 
 #### SMB Authentication
 
@@ -42,13 +42,13 @@ Services which make SMB connections will do so in the context of the assigned se
 
 NET.EXE is the command line tool to manage network connections at the Windows CMD prompt. The USE subcommand allows you to connect and disconnect resources.
 
-Connect to a file share
+#### Connect to a file share
 
 `NET USE [drive_letter] file://myserver/myshare /user:mydomain\myaccount *`  (where * stipulates that you will be prompted for your password). The drive_letter is optional; you will establish a connection with or without it, but the drive mapping gives you a shorthand way to refer to the remote file path.
 
-See all connected (mapped) drives using the NET USE command. Note that it is possible to do loopback and connect to a local shared resource via SMB:
+#### See all connected (mapped) drives using the NET USE command. Note that it is possible to do loopback and connect to a local shared resource via SMB:
 
-> An image will go here
+![Connected drives](/media/win2k8/filesrv-01.png)
 
 Use `NET USE [drive_letter] /D` to disconnect a specific connection, or `NET USE * /D` to disconnect everything.
 
@@ -78,7 +78,7 @@ Some system items are shared automatically, e.g., disk volumes. To connect to a 
 
 See all shared local drives using the NET SHARE command:
 
-> An image will go here
+![Shared volumes](/media/win2k8/filesrv-02.png)
 
 ### SMB Authentication
 
@@ -90,7 +90,7 @@ If you want to have an authenticated SMB session to a host for any subsequent co
 
 `NET USE file://myserver/ADMIN$` creates a connection to the system folder and requires admin credentials on the remote system.
 
-> Clients are servers too!
+> #### NOTE
 > Unless specifically disabled, every Windows system can both use and share content.
 
 ### SMB Special Volumes

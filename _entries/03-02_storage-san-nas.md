@@ -13,7 +13,8 @@ A host bus adapter (HBA) implements the SAN's access protocols and provides phys
 
 SAN physical connectivity is almost always provided via switched infrastructure over copper twinax or (more commonly), fiber optic cabling.
 
-> [Fibre Channel](https://en.wikipedia.org/wiki/Fibre_Channel) remains the predominant standard for SAN connectivity. Speeds range from 4Gb/sec up to 10Gb/sec for older networks, to common speeds of 32Gb/sec and beyond, depending on the age of the infrastructure.
+> [Fibre Channel](https://en.wikipedia.org/wiki/Fibre_Channel) remains the predominant standard for SAN connectivity. Speeds range from 4Gb/sec up to 10Gb/sec for older networks, to common speeds of 32Gb/sec and beyond, depending on the age of the infrastructure.  
+
 > [Hyper-converged infrastructure (HCI)](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure) combines data networking and storage networking high-capacity networking infrastructure. As datacenters continue the path to 40- and 100Gb/sec infrastructure, SANs will follow because of their increasingly common underpinnings.
 
 ### SANS and Virtualization
@@ -46,6 +47,7 @@ Highly rack dense systems/blades often have no DAS at all, even to support pagef
 
 VMs may leverage DAS if the hypervisor provides 'passthrough' (Hyper-V) or 'raw device mapping' (VMWare) AND the disk volume is locally mounted on the hypervisor host. This is very uncommon in production environments.
 
+> #### NOTE
 > There is commonly no special requirement to handle DAS volumes in migration, but confirm that cloud disk storage provides the same functionality for the workload.
 
 It is used for specialized system configurations, including compute clusters, Hadoop clusters, Elastic clusters and other scenarios which latency and/or built-in redundancy makes network hosted storage undesirable or unnecessary.
@@ -99,19 +101,19 @@ More options for disk management are provided by Storage Spaces.
 
 By usual custom in Windows, a volume is presented by the operating system as a drive letter, i.e., a C: drive. In this case you can consider C: to be a mount point for the OS partition. Not all volumes are mapped to drive letters, however...it is common to see multiple hidden volumes on a system. The easiest tool to use to see all your volumes is DiskPart:
 
-> an image will go here
+![Diskpart list volumes](media/win2k8/diskpart-01.png)
 
 In the case above, notice that Volume 6 is attached to a directory mount point. These are supported in Windows but are infrequently used. In theory, you could mount the user profiles directory to a specific volume (i.e., like mapping /home to a different disk volume in a Unix-style OS), but there is typically little advantage in doing so.
 
 Each volume in Windows has a volume identifier which is unique across space and time. This allows disk volumes to be mounted on a new system without losing their integral identity. A globally unique ID (GUID) is used to identify a volume created in Windows. A volume list (produced by mountvol) looks like this:
 
-> an image will go here
+![Diskpart mount points](media/win2k8/diskpart-02.png)
 
 The OS kernel has no underlying dependency on drive letters, although one drive letter must be assigned to the system. Any other volume can be mounted on an existing file system or even have no stated mount point (typical for OS utility volumes).
 
 The mount point for any existing volume (except the system drive) can be changed, although any scripts or configurations which depend on existing location may be broken as a result.
 
-> an image will go here
+![Assign drive letter dialog](/media/win2k8/assign-drive-letter-01.png)
 
 For scripting purposes, it is always recommended to use system-generated variables to find objects of interest, e.g.:
 
@@ -132,7 +134,7 @@ For scripting purposes, it is always recommended to use system-generated variabl
 
 Fetch these values from PS like so:
 
-`dir env:\SystemRoot`, or
+`dir env:\SystemRoot`, or;
 
 `$var = (dir env:\SystemRoot).Value` to deference.
 

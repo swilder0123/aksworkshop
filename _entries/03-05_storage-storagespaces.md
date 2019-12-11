@@ -7,16 +7,22 @@ parent-id: storage
 
 ### What Is Storage Spaces?
 
-Storage Spaces is the volume manager available in Windows Server since Windows Server 2012. No version of Storage Spaces is available for Windows Server 2008.
+Storage Spaces is the volume manager available in Windows Server since Windows Server 2012. It provides aggregation, volumes for performance and durability, and elastic (online) storage management. It provides a foundation for highly-available shared disk resources in a cluster (Clustered Spaces) which are used by Hyper-V, SQL Server and other cluster-aware applications.
+
+Storage Spaces is also the foundation for [Microsoft hyper-converged infrastructure (HCI)](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/use/manage-hyper-converged#what-is-hyper-converged-infrastructure).
+
+> #### NOTE: 
+> No version of Storage Spaces is available for Windows Server 2008. 
 
 ### Storage Spaces in Azure
 
-Storage Spaces is a good fit for cloud deployment in Azure. Note that the speed of the system interconnect is critical; use a VM deployment
+Storage Spaces is a good fit for cloud deployment in Azure. Note that the speed of the system interconnect is critical; use a VM deployment type that provides high-capacity throughput.
 
-Storage Spaces Direct on Azure VMs: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-in-vm, or;
-Storage configuration for SQL Server VMs: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-storage-configuration.
+> #### RESOURCES
+>> Storage Spaces Direct on Azure VMs: https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-in-vm, or  
+>
+>> Storage configuration for SQL Server VMs: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-storage-configuration.
 
-NOTE: SQL Server configuration from the Azure portal will automatically configure local Storage Spaces pools if your VM needs them!
 
 ### Storage Spaces Resiliency Models
 
@@ -54,5 +60,6 @@ S2D is not a replacement for Storage Spaces. It simply provides a new model for 
 
 Unlike the earlier version of clustered Storage Spaces, S2D allows any locally attached storage to be presented to a virtual cluster-level storage pool. Clustered Spaces in S2D can then be built using locally-attached storage, without the needed for a cluster-level shared storage interconnect (this is virtualized within the cluster interconnect).
 
+> #### NOTE
 > Functionality of S2D is explained at https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview#how-it-works.
 
